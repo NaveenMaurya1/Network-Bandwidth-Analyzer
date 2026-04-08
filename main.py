@@ -1,7 +1,7 @@
 import time
 import psutil
 
-#  first do :pip install psutil
+#  venv have psutil package 
 
 def get_size(bytes):
     """Convert bytes to a human-readable format"""
@@ -31,7 +31,7 @@ def monitor_bandwidth(interval=1):
         old_data = new_data
 
 if __name__ == "__main__":
-    try:
+    try:                               
         monitor_bandwidth(interval=1)
-    except KeyboardInterrupt:
-        print("\nMonitoring stopped.")
+    except KeyboardInterrupt:        # When we press ctrl + c ,it will raise a keyboard interrupt exception and while will stop.   
+        print("\nMonitoring stopped.")   
