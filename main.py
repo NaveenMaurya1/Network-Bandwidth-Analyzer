@@ -1,10 +1,12 @@
 import time
 import psutil
 
-#  venv have psutil package 
+#  we have to ensure that we have psutil package or we used that environment which have psutil package...
 
 def get_size(bytes):
+
     """Convert bytes to a human-readable format"""
+
     for unit in ['B', 'KB', 'MB', 'GB', 'TB']:
         if bytes < 1024:
             return f"{bytes:.2f} {unit}"
