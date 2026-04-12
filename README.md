@@ -2,25 +2,24 @@
 
 ## 📌 Overview
 
-Network Bandwidth Analyzer is a tool designed to monitor, analyze, and visualize network bandwidth usage. It helps users understand how network resources are being consumed and identify potential bottlenecks or unusual traffic patterns.
+Network Bandwidth Analyzer is a simple Python-based tool that monitors real-time network bandwidth usage. It displays upload and download speeds at regular intervals, helping users understand their network activity.
 
 ---
 
 ## 🚀 Features
-
+`
 * 📊 Real-time bandwidth monitoring
-* 📈 Data usage analysis
-* 🌐 Network traffic insights
-* ⚡ Detect high bandwidth consumption
-* 🔍 Identify network performance issues
+* 📈 Displays upload and download speed per second
+* ⚡ Lightweight and fast
+* 🖥️ Works directly from the terminal
+* ⏱️ Customizable monitoring interval
 
 ---
 
 ## 🛠️ Technologies Used
 
 * Python
-* Networking libraries (e.g., socket / psutil / scapy if used)
-* Data visualization tools (if applicable)
+* psutil (for accessing system and network statistics)
 
 ---
 
@@ -38,35 +37,38 @@ git clone https://github.com/NaveenMaurya1/Network-Bandwidth-Analyzer.git
 cd Network-Bandwidth-Analyzer
 ```
 
-3. Install required dependencies:
+3. Install dependencies:
 
 ```bash
-pip install -r requirements.txt
+pip install psutil
 ```
 
 ---
 
 ## ▶️ Usage
 
-Run the main script:
+Run the script:
 
 ```bash
 python main.py
 ```
 
-*(Update the filename if your main file is different)*
+You will see output like:
+
+```
+Upload Speed: 15.20 KB/s | Download Speed: 120.45 KB/s
+```
+
+Press **Ctrl + C** to stop monitoring.
 
 ---
 
-## 📊 How It Works
+## ⚙️ How It Works
 
-The analyzer collects network data such as:
-
-* Incoming and outgoing traffic
-* Bandwidth usage over time
-* Network interface statistics
-
-It then processes this data to provide meaningful insights into network performance.
+* Uses `psutil.net_io_counters()` to fetch network statistics
+* Calculates the difference in bytes sent and received over time
+* Converts bytes into human-readable format (KB, MB, etc.)
+* Displays real-time upload and download speeds
 
 ---
 
@@ -75,19 +77,17 @@ It then processes this data to provide meaningful insights into network performa
 ```
 Network-Bandwidth-Analyzer/
 │── main.py
-│── requirements.txt
 │── README.md
-│── (other files)
 ```
 
 ---
 
 ## 🔮 Future Improvements
 
-* Add graphical dashboard
-* Real-time alerts for unusual traffic
-* Export reports (CSV/JSON)
-* Multi-device monitoring
+* Add graphical interface (GUI)
+* Log bandwidth usage to a file
+* Show historical data and charts
+* Add alerts for high bandwidth usage
 
 ---
 
@@ -95,27 +95,26 @@ Network-Bandwidth-Analyzer/
 
 Contributions are welcome!
 
-1. Fork the repo
-2. Create your feature branch (`git checkout -b feature-name`)
-3. Commit changes (`git commit -m "Add feature"`)
-4. Push to branch (`git push origin feature-name`)
-5. Open a Pull Request
+1. Fork the repository
+2. Create a new branch
+3. Make your changes
+4. Submit a pull request
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+This project is open-source and available under the MIT License.
 
 ---
 
 ## 🙌 Acknowledgements
 
-* Open-source networking tools and libraries
-* Inspiration from network monitoring tools and analyzers
+* psutil library for system monitoring
+* Python community
 
 ---
 
 ## ⭐ Support
 
-If you like this project, please give it a ⭐ on GitHub!
+If you found this project helpful, please give it a ⭐ on GitHub!
